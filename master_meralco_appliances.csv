@@ -1,0 +1,106 @@
+Category,Model,kWh_value,Usage_Unit,avg_watts,Notes
+Refrigerator,RT20FARVDSA,1.1856,day,49.4,7.17 cu.ft Samsung
+Refrigerator,RT22FARBDSA,1.2696,day,52.9,8.30 cu.ft Samsung
+Refrigerator,RDNT250120VZP,1.8748,day,78.1,8.83 cu.ft Beko
+Refrigerator,GR-B207GLQV,1.5533,day,64.7,21.00 cu.ft LG
+Refrigerator,GR-B222RLCL,1.0379,day,43.2,8.00 cu.ft LG
+Refrigerator,GR-M602HSHL,1.2896,day,53.7,16.85 cu.ft LG
+Refrigerator,ACF-INV130W,0.3116,day,13.0,13.00 cu.ft American Home
+Refrigerator,ARTM-INV817S,0.1093,day,4.6,8.00 cu.ft American Home
+Refrigerator,RDNT230120VZP,1.7761,day,74.0,7.10 cu.ft Beko
+Refrigerator,RDNT360E20VZX,1.3686,day,57.0,12.71 cu.ft Beko
+Refrigerator,IRD-85S,0.564,day,23.5,8.65 cu.ft Fujidenzo
+Refrigerator,RBT-35 SL,0.4177,day,17.4,3.46 cu.ft Fujidenzo
+Refrigerator,RD-32WR2S,0.5091,day,21.2,8.90 cu.ft Hisense
+Refrigerator,SNF-0403,2.3432,day,97.6,14.12 cu.ft Sanden
+Refrigerator,GR-C272SLCN,0.7526,day,31.4,9.60 cu.ft LG
+Refrigerator,GR-B372SQCB,0.6989,day,29.1,11.00 cu.ft LG
+Refrigerator,CF316WPH,0.733,day,30.5,11.16 cu.ft Beko
+Refrigerator,FSI11HSG,2.3706,day,98.8,11.00 cu.ft Fabriano
+Refrigerator,RC-65WC,1.3977,day,58.2,17.98 cu.ft Hisense
+Refrigerator,ACF-H195DF,0.5052,day,21.1,5.10 cu.ft American Home
+Refrigerator,ACF-M1020DF,0.9786,day,40.8,10.20 cu.ft American Home
+Refrigerator,CF100WPH,0.5986,day,24.9,3.50 cu.ft Beko
+Refrigerator,FCG-70PDF SL2,1.6187,day,67.4,7.10 cu.ft Fujidenzo
+Refrigerator,GMV080BAGRSG,0.7482,day,31.2,8.00 cu.ft GE
+Refrigerator,HAMDDREF-28,0.554,day,23.1,2.80 cu.ft Hanabishi
+Refrigerator,RC-67WS,1.4209,day,59.2,18.30 cu.ft Hisense
+Refrigerator,R-VG540PG7,0.9456,day,39.4,17.30 cu.ft Hitachi
+Refrigerator,GC-269VL3,1.592,day,66.3,8.00 cu.ft LG
+Refrigerator,NR-BP242VD,0.842,day,35.1,9.50 cu.ft Panasonic
+Refrigerator,SJ-DP80AS,0.615,day,25.6,6.00 cu.ft Sharp
+Refrigerator,HRF-175,0.732,day,30.5,7.20 cu.ft Haier
+Refrigerator,GR-RT234WE,0.905,day,37.7,10.00 cu.ft Toshiba
+Refrigerator,ERF-180,0.488,day,20.3,4.50 cu.ft Everest
+Air Conditioner,FP-53KHF009313A0,0.4487,hour,448.7,Conventional Condura
+Air Conditioner,KF-25I,0.7357,hour,735.7,Inverter Gree
+Air Conditioner,51ARA006HMNV-N1B,0.1215,hour,121.5,Conventional Midea
+Air Conditioner,FP-53CVUR010-703,0.3325,hour,332.5,Conventional Carrier
+Air Conditioner,FP-53KSD009313,0.4124,hour,412.4,Inverter Condura
+Air Conditioner,HWTAC06U,0.0982,hour,98.2,Conventional Hanabishi
+Air Conditioner,HS-12IPM,0.3975,hour,397.5,Inverter LG
+Air Conditioner,TJC09VRZ,0.379,hour,379,Inverter Tosot
+Air Conditioner,AHAC-TI100STI,0.1573,hour,157.3,Inverter American Home
+Air Conditioner,FP-51CH3RACCAR09KEE,0.3557,hour,355.7,Inverter Carrier
+Air Conditioner,FP-51CH3RACCCONH012EEKE,0.4728,hour,472.8,Inverter Condura
+Air Conditioner,FTKM25TVM,0.2095,hour,209.5,Inverter Daikin
+Air Conditioner,IWAR120G,0.3553,hour,355.3,Inverter Fujidenzo
+Air Conditioner,AS-09TR2S,0.3282,hour,328.2,Inverter Hisense
+Air Conditioner,LA100WL,0.2034,hour,203.4,Inverter LG
+Air Conditioner,CS/CU-U12TKQ,0.3235,hour,323.5,Inverter Panasonic
+Air Conditioner,CS/CU-U9WKQ,0.305,hour,305,Inverter Panasonic
+Air Conditioner,AH-A9UCY,0.412,hour,412,Conventional Sharp
+Air Conditioner,KAG-10HCINV,0.338,hour,338,Inverter Kolin
+Air Conditioner,ACO9C,0.465,hour,465,Conventional Whirlpool
+Air Conditioner,ASW-H09B4,0.294,hour,294,Inverter Aux
+Kitchen Appliance,AX-300E,0.2573,use,,Electric Airpot 3D
+Kitchen Appliance,RC-3C,0.1571,use,,Rice Cooker 3D
+Kitchen Appliance,RC-35E,0.1875,use,,Rice Cooker 3D
+Kitchen Appliance,RC-13C,0.4583,use,,Rice Cooker 3D
+Kitchen Appliance,HHRC-18FS,0.3167,use,,Rice Cooker Hanabishi
+Kitchen Appliance,HD 3077,0.361,use,,Rice Cooker Philips
+Kitchen Appliance,HD 3130,0.2735,use,,Rice Cooker Philips
+Kitchen Appliance,RK7321,0.3434,use,,Rice Cooker Tefal
+Kitchen Appliance,AMW-20MCW,0.0808,use,,Microwave American Home
+Kitchen Appliance,FP-61MMV020LETH-S,0.0866,use,,Microwave Midea
+Kitchen Appliance,IC-38,0.3029,use,,Induction Dowell
+Kitchen Appliance,IH7208,0.3073,use,,Induction Tefal
+Kitchen Appliance,PK-3170,0.152,use,,Electric Kettle 3D
+Kitchen Appliance,KI150D10,0.1364,use,,Electric Kettle Tefal
+Kitchen Appliance,IRC-2000,0.298,use,,Rice Cooker Imarflex
+Kitchen Appliance,KW-3833,0.162,use,,Electric Kettle Kyowa
+Kitchen Appliance,EMO-20L,0.094,use,,Microwave Eurotek
+Kitchen Appliance,HIC-1600,0.289,use,,Induction Hanabishi
+Kitchen Appliance,AF-35,0.176,use,,Air Fryer Astron
+Gadgets / AV / Computers,CN-25H3X,0.0987,hour,98.7,TV LG 24"
+Gadgets / AV / Computers,CT-21K30MH,0.0593,hour,59.3,TV Samsung 21"
+Gadgets / AV / Computers,PS43F4500AR,0.1528,hour,152.8,TV Samsung 43"
+Gadgets / AV / Computers,S-UA55H7000AK,0.1146,hour,114.6,TV Samsung 55"
+Gadgets / AV / Computers,32LH604B.APH,0.034,hour,34,TV LG 32"
+Gadgets / AV / Computers,55UH600T.APH,0.0844,hour,84.4,TV LG 55"
+Gadgets / AV / Computers,43DL541,0.057,hour,57,TV Devant 43"
+Gadgets / AV / Computers,32K312,0.041,hour,41,TV Hisense 32"
+Gadgets / AV / Computers,LC-32LE360D3,0.0389,hour,38.9,TV Sharp 32"
+Gadgets / AV / Computers,KDL-32W607D,0.03,hour,30,TV Sony 32"
+Gadgets / AV / Computers,LED32S4900,0.036,hour,36,TV TCL 32"
+Gadgets / AV / Computers,S-UA55KU6300GXXP-0,0.1124,hour,112.4,TV Samsung 55"
+Gadgets / AV / Computers,SA220Q,0.024,hour,24,Monitor Acer 21"
+Gadgets / AV / Computers,P2419H,0.031,hour,31,Monitor Dell 24"
+Gadgets / AV / Computers,24mh,0.028,hour,28,Monitor HP 24"
+Gadgets / AV / Computers,L24e-20,0.026,hour,26,Monitor Lenovo 24"
+Gadgets / AV / Computers,VA2261H-8,0.022,hour,22,Monitor ViewSonic 22"
+Electric Fan,16" Stand Fan Generic,0.06,hour,60,Typical non-branded
+Electric Fan,Hanabishi 16" Stand,0.055,hour,55,Mid-range common
+Electric Fan,3D 18" Wall Fan,0.065,hour,65,Meralco tested approx
+Electric Fan,Asahi 14" Desk Fan,0.045,hour,45,Small bedroom fan
+Electric Shower Heater,Panasonic DH-3VS1 3.5kW,3.5,minutes,3500,Instant single-point
+Electric Shower Heater,Generic 3.5-4.5kW,4.0,minutes,4000,Common no-brand
+Electric Shower Heater,Signa/Hanabishi 4.5kW,4.5,minutes,4500,Higher power model
+Electric Shower Heater,Stiebel Eltron 3.5kW,3.5,minutes,3500,Premium efficient
+Washing Machine,Panasonic NA-F70B5 7kg,0.25,use,250,Semi-auto typical
+Washing Machine,LG 8kg Inverter Top Load,0.18,use,180,Inverter efficient
+Washing Machine,Sharp Semi-Auto 6.5kg,0.30,use,300,Older style
+Water Dispenser,Hot & Cold Generic,0.45,day,,Always-on typical
+Water Dispenser,Hot & Cold Hanabishi/American Home,0.38,day,,Common model
+Wi-Fi / Always-on,Wi-Fi Always-on,0.05,day,,Typical always-on small device
+Lighting,Whole house LED mix 10×9W,0.09,hour,90,Total estimate for house
