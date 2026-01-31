@@ -3,112 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Electricity Bill & Appliance Calculator</title>
-  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <title>Daily Electricity Usage Calculator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="logo-container">
-      <img 
-        src="{{ url_for('static', filename='images/logo.png') }}" 
-        alt="Meralco Logo" 
-        class="meralco-logo"
-      >
-      <h1>Electricity Bill & Appliance Calculator</h1>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="logo-container">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Meralco Logo" class="meralco-logo">
+    <h1>Electricity Bill & Appliance Calculator</h1>
+  </div>
+</header>
 
-  <div class="hero">
-    <h2>Estimate Your Monthly Electricity Cost</h2>
-    <p>Know how much your gadgets and appliances consume so you stay in control and manage your monthly budget better.</p>
+<div class="hero">
+  <h2>Estimate Your Daily Electricity Cost</h2>
+  <p>Enter your appliances and daily usage to estimate your electricity consumption.</p>
+</div>
+
+<form class="calculator" method="POST">
+
+  <div class="input-group">
+    <label>Household Size</label>
+    <input type="number" name="household_size" min="1" value="4" required>
   </div>
 
-  <form class="calculator" method="POST">
-    <div class="input-group">
-      <label for="household_size">Household Size</label>
-      <input 
-        type="number" 
-        id="household_size" 
-        name="household_size" 
-        value="4" 
-        min="1" 
-        required
-      >
-    </div>
+  <div class="appliance-list">
+    {% for i in range(1,6) %}
+    <div class="appliance-card">
+      <h3>Appliance {{ i }}</h3>
 
-    <div class="appliance-list">
-      {% for i in range(1, 6) %}
-      <div class="appliance-card">
-        <h3>Appliance {{ i }}</h3>
-
-        <label for="category_{{ i }}">Category</label>
-        <select name="category_{{ i }}" id="category_{{ i }}" class="select-lg">
-          <option value="">Select Category</option>
-          {% for cat in grouped_models.keys() %}
-          <option value="{{ cat }}">{{ cat }}</option>
-          {% endfor %}
-        </select>
-
-        <label for="model_{{ i }}">Model</label>
-        <select name="model_{{ i }}" id="model_{{ i }}" class="select-lg">
-          <option value="">Select Model</option>
-          {% for cat, rows in grouped_models.items() %}
-          <optgroup label="{{ cat }}">
-            {% for r in rows %}
-            <option value="{{ r.Model }}">{{ r.Notes or r.Model }}</option>
-            {% endfor %}
-          </optgroup>
-          {% endfor %}
-        </select>
-
-        <label for="usage_{{ i }}">Usage (hours/day or uses)</label>
-        <input 
-          type="number" 
-          step="0.1" 
-          id="usage_{{ i }}" 
-          name="usage_{{ i }}" 
-          min="0" 
-          placeholder="e.g. 8 for AC, 1 for rice cooker per use"
-        >
-      </div>
-      {% endfor %}
-    </div>
-
-    <button type="submit" class="btn-primary">Calculate Estimated Bill</button>
-  </form>
-
-  {% if result %}
-  <section class="result-section">
-    <div class="result-card">
-      <h2>Estimated Monthly Usage</h2>
-      <p class="big">{{ result.predicted_kwh }} kWh</p>
-      <p class="small">≈ ₱{{ result.bill }} / month</p>
-    </div>
-
-    <div class="detail-grid">
-      <div class="detail-box">
-        <strong>Calculated from appliances:</strong> {{ result.base_kwh }} kWh
-      </div>
-      <div class="detail-box">
-        <strong>Estimated realistic range:</strong> ₱{{ result.bill_low }} – ₱{{ result.bill_high }}
-      </div>
-    </div>
-
-    <div class="drivers">
-      <h3>Main Contributing Factors</h3>
-      <ul>
-        {% for d in result.drivers %}
-        <li>{{ d }}</li>
+      <label>Category</label>
+      <select name="category_{{ i }}">
+        <option value="">Select Category</option>
+        {% for cat in grouped_models.keys() %}
+        <option value="{{ cat }}">{{ cat }}</option>
         {% endfor %}
-      </ul>
+      </select>
+
+      <label>Model</label>
+      <select name="model_{{ i }}">
+        <option value="">Select Model</option>
+        {% for cat, rows in grouped_models.items() %}
+        <optgroup label="{{ cat }}">
+          {% for r in rows %}
+          <option value="{{ r.Model }}">{{ r.Notes or r.Model }}</option>
+          {% endfor %}
+        </optgroup>
+        {% endfor %}
+      </select>
+
+      <label>Daily Usage (hours / uses)</label>
+      <input type="number" step="0.1" name="usage_{{ i }}" min="0" placeholder="e.g. 8">
+    </div>
+    {% endfor %}
+  </div>
+
+  <button type="submit" class="btn-primary">Calculate Daily Usage</button>
+</form>
+
+{% if result %}
+<section class="result-section">
+
+  <div class="result-card">
+    <h2>Estimated Daily Consumption</h2>
+    <p class="big">{{ result.daily_kwh }} kWh / day</p>
+    <p class="small">≈ ₱{{ result.daily_bill }} / day</p>
+  </div>
+
+  <div class="detail-grid">
+    <div class="detail-box">
+      <strong>Based on appliances:</strong>
+      {{ result.base_kwh }} kWh / day
     </div>
 
-    <p style="text-align:center; margin-top:1.5rem; color:#555; font-size:0.95rem;">
-      Note: This is an estimate. Actual bills depend on Meralco rates, meter accuracy, and unlisted loads (standby, lights, etc.).
-    </p>
-  </section>
-  {% endif %}
+    <div class="detail-box">
+      <strong>Estimated daily cost range:</strong>
+      ₱{{ result.bill_low }} – ₱{{ result.bill_high }}
+    </div>
+  </div>
+
+  <div class="drivers">
+    <h3>Main Contributing Factors</h3>
+    <ul>
+      {% for d in result.drivers %}
+      <li>{{ d }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</section>
+{% endif %}
 
 </body>
 </html>
