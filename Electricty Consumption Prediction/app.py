@@ -2,129 +2,131 @@ from flask import Flask, render_template, request
 import pandas as pd
 import joblib
 import os
-import numpy as np
 
 app = Flask(__name__)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MASTER_CSV = os.path.join(BASE_DIR, "master_meralco_appliances.csv")
-MODEL_FILE = os.path.join(BASE_DIR, "real_electricity_model.pkl")
+
+MODEL_FILE = os.path.join(BASE_DIR, "daily_electricity_model.pkl")
+APPLIANCE_FILE = os.path.join(BASE_DIR, "master_meralco_appliances.csv")
 
 RATE_PER_KWH = 12.95
-DAYS_IN_MONTH = 30
 
 FEATURE_COLS = [
-    'household_size',
-    'has_ac',
-    'ac_hours_day',
-    'rice_uses_day',
-    'tv_hours_day',
-    'has_wifi'
+    "household_size",
+    "has_ac",
+    "ac_hours_day",
+    "rice_uses_day",
+    "tv_hours_day",
+    "has_wifi",
+    "heat_index",
+    "is_weekend"
 ]
 
-ALWAYS_ON_DAILY_BASE = 0.7
-ALWAYS_ON_PER_PERSON = 0.12
+model = joblib.load(MODEL_FILE)
+appliances_df = pd.read_csv(APPLIANCE_FILE)
 
-master = pd.read_csv(MASTER_CSV)
-rf_model = joblib.load(MODEL_FILE)
+grouped_models = {
+    cat: rows.to_dict(orient="records")
+    for cat, rows in appliances_df.groupby("Category")
+}
 
-grouped_models = {}
-for _, row in master.iterrows():
-    grouped_models.setdefault(row['Category'], []).append(row)
+appliance_lookup = appliances_df.set_index("Model").to_dict("index")
+
 
 @app.route("/", methods=["GET", "POST"])
 def home():
     result = None
 
     if request.method == "POST":
-        household_size = int(request.form.get("household_size", 4))
-        total_daily_kwh = 0
-        appliance_count = 0
+        household_size = int(request.form["household_size"])
+        heat_index = float(request.form["heat_index"])
+        day_type = request.form["day_type"]
 
-        rf_features = {
-            "household_size": household_size,
-            "has_ac": 0,
-            "ac_hours_day": 0,
-            "rice_uses_day": 0,
-            "tv_hours_day": 0,
-            "has_wifi": 0
-        }
+        is_weekend = 1 if day_type in ["Saturday", "Sunday"] else 0
+
+        base_kwh = 0.0
+        ac_hours = 0
+        rice_uses = 0
+        tv_hours = 0
+        has_ac = 0
+        has_wifi = 0
+
+        drivers = []
 
         for i in range(1, 6):
-            cat = request.form.get(f"category_{i}")
             model_name = request.form.get(f"model_{i}")
-            usage = float(request.form.get(f"usage_{i}", 0) or 0)
+            usage = request.form.get(f"usage_{i}")
 
-            if not cat or not model_name:
+            if not model_name or not usage:
                 continue
 
-            row = master[
-                (master["Category"] == cat) &
-                (master["Model"] == model_name)
-            ]
-
-            if row.empty:
+            usage = float(usage)
+            row = appliance_lookup.get(model_name)
+            if not row:
                 continue
 
-            row = row.iloc[0]
-            kwh = float(row["kWh_value"])
-            unit = row["Usage_Unit"].lower()
+            kwh_value = row["kWh_value"]
+            unit = row["Usage_Unit"]
 
-            if unit in ["hour", "hours"]:
-                daily = kwh * usage
-            elif unit in ["use", "uses", "cycle"]:
-                daily = kwh * usage
+            if unit == "hour":
+                kwh = kwh_value * usage
+            elif unit == "use":
+                kwh = kwh_value * usage
+            elif unit == "minutes":
+                kwh = kwh_value * (usage / 60)
             else:
-                daily = kwh
+                kwh = kwh_value
 
-            total_daily_kwh += daily
-            appliance_count += 1
+            base_kwh += kwh
 
-            if cat == "Air Conditioner":
-                rf_features["has_ac"] = 1
-                rf_features["ac_hours_day"] = max(rf_features["ac_hours_day"], usage)
+            notes = row.get("Notes", "")
 
-            if "RICE" in model_name.upper():
-                rf_features["rice_uses_day"] += usage
+            if row["Category"] == "Air Conditioner":
+                has_ac = 1
+                ac_hours += usage
 
-            if "TV" in model_name.upper():
-                rf_features["tv_hours_day"] += usage
+            if "Rice Cooker" in notes:
+                rice_uses += usage
 
-            if cat in ["Wi-Fi / Always-on", "Gadgets / AV / Computers"]:
-                rf_features["has_wifi"] = 1
+            if "TV" in notes:
+                tv_hours += usage
 
-        misc = ALWAYS_ON_DAILY_BASE + ALWAYS_ON_PER_PERSON * household_size
-        total_daily_kwh += misc
+            if row["Category"] == "Wi-Fi / Always-on":
+                has_wifi = 1
 
-        base_monthly = total_daily_kwh * DAYS_IN_MONTH
-        X = pd.DataFrame([rf_features], columns=FEATURE_COLS)
+            drivers.append(f"{row['Category']} – {notes or model_name}")
 
-        tree_preds = np.array([
-            tree.predict(X.values)[0]
-            for tree in rf_model.estimators_
-        ])
+        X = pd.DataFrame([{
+            "household_size": household_size,
+            "has_ac": has_ac,
+            "ac_hours_day": ac_hours,
+            "rice_uses_day": rice_uses,
+            "tv_hours_day": tv_hours,
+            "has_wifi": has_wifi,
+            "heat_index": heat_index,
+            "is_weekend": is_weekend
+        }], columns=FEATURE_COLS)
 
-        ml_weight = 0.4 if appliance_count > 2 else 0.55
-        predicted_monthly = (1 - ml_weight) * base_monthly + ml_weight * tree_preds.mean()
+        ml_kwh = model.predict(X)[0]
 
-        daily_kwh = predicted_monthly / DAYS_IN_MONTH
-        daily_bill = daily_kwh * RATE_PER_KWH
+        final_kwh = (base_kwh * 0.6) + (ml_kwh * 0.4)
+        daily_bill = final_kwh * RATE_PER_KWH
 
         result = {
-            "daily_kwh": round(daily_kwh, 2),
-            "base_kwh": round(total_daily_kwh, 2),
-            "daily_bill": f"{daily_bill:,.2f}",
-            "bill_low": round(np.percentile(tree_preds, 10) / DAYS_IN_MONTH * RATE_PER_KWH, 2),
-            "bill_high": round(np.percentile(tree_preds, 90) / DAYS_IN_MONTH * RATE_PER_KWH, 2),
-            "drivers": [
-                "Air conditioner usage" if rf_features["has_ac"] else None,
-                "Large household" if household_size >= 5 else None
-            ]
+            "daily_kwh": round(final_kwh, 2),
+            "daily_bill": round(daily_bill, 2),
+            "base_kwh": round(base_kwh, 2),
+            "bill_low": round(daily_bill * 0.9, 2),
+            "bill_high": round(daily_bill * 1.1, 2),
+            "drivers": list(set(drivers))[:5]
         }
 
-        result["drivers"] = [d for d in result["drivers"] if d]
-
-    return render_template("index.html", grouped_models=grouped_models, result=result)
+    return render_template(
+        "index.html",
+        result=result,
+        grouped_models=grouped_models
+    )
 
 
 if __name__ == "__main__":
