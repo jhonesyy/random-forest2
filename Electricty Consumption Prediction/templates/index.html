@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daily Electricity Usage Calculator</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="logo-container">
-    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Meralco Logo" class="meralco-logo">
+    <img src="static/images/yop.png" alt="Meralco Logo" class="meralco-logo">
     <h1>Electricity Bill & Appliance Calculator</h1>
   </div>
 </header>
@@ -25,6 +25,20 @@
   <div class="input-group">
     <label>Household Size</label>
     <input type="number" name="household_size" min="1" value="4" required>
+  </div>
+
+  <div class="input-group">
+    <label>Heat Index (Feels Like °C)</label>
+    <input type="number" step="0.1" name="heat_index" value="40" required>
+  </div>
+
+  <div class="input-group">
+    <label>Day Type</label>
+    <select name="day_type" required>
+      <option value="Weekday">Weekday</option>
+      <option value="Saturday">Saturday</option>
+      <option value="Sunday">Sunday</option>
+    </select>
   </div>
 
   <div class="appliance-list">
@@ -53,7 +67,7 @@
       </select>
 
       <label>Daily Usage (hours / uses)</label>
-      <input type="number" step="0.1" name="usage_{{ i }}" min="0" placeholder="e.g. 8">
+      <input type="number" step="0.1" name="usage_{{ i }}" min="0">
     </div>
     {% endfor %}
   </div>
@@ -63,7 +77,6 @@
 
 {% if result %}
 <section class="result-section">
-
   <div class="result-card">
     <h2>Estimated Daily Consumption</h2>
     <p class="big">{{ result.daily_kwh }} kWh / day</p>
@@ -90,7 +103,6 @@
       {% endfor %}
     </ul>
   </div>
-
 </section>
 {% endif %}
 
