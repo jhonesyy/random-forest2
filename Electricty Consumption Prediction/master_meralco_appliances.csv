@@ -1,106 +1,276 @@
 Category,Model,kWh_value,Usage_Unit,avg_watts,Notes
-Refrigerator,RT20FARVDSA,1.1856,day,49.4,7.17 cu.ft Samsung
-Refrigerator,RT22FARBDSA,1.2696,day,52.9,8.30 cu.ft Samsung
-Refrigerator,RDNT250120VZP,1.8748,day,78.1,8.83 cu.ft Beko
-Refrigerator,GR-B207GLQV,1.5533,day,64.7,21.00 cu.ft LG
-Refrigerator,GR-B222RLCL,1.0379,day,43.2,8.00 cu.ft LG
-Refrigerator,GR-M602HSHL,1.2896,day,53.7,16.85 cu.ft LG
-Refrigerator,ACF-INV130W,0.3116,day,13.0,13.00 cu.ft American Home
-Refrigerator,ARTM-INV817S,0.1093,day,4.6,8.00 cu.ft American Home
-Refrigerator,RDNT230120VZP,1.7761,day,74.0,7.10 cu.ft Beko
-Refrigerator,RDNT360E20VZX,1.3686,day,57.0,12.71 cu.ft Beko
-Refrigerator,IRD-85S,0.564,day,23.5,8.65 cu.ft Fujidenzo
-Refrigerator,RBT-35 SL,0.4177,day,17.4,3.46 cu.ft Fujidenzo
-Refrigerator,RD-32WR2S,0.5091,day,21.2,8.90 cu.ft Hisense
-Refrigerator,SNF-0403,2.3432,day,97.6,14.12 cu.ft Sanden
-Refrigerator,GR-C272SLCN,0.7526,day,31.4,9.60 cu.ft LG
-Refrigerator,GR-B372SQCB,0.6989,day,29.1,11.00 cu.ft LG
-Refrigerator,CF316WPH,0.733,day,30.5,11.16 cu.ft Beko
-Refrigerator,FSI11HSG,2.3706,day,98.8,11.00 cu.ft Fabriano
-Refrigerator,RC-65WC,1.3977,day,58.2,17.98 cu.ft Hisense
-Refrigerator,ACF-H195DF,0.5052,day,21.1,5.10 cu.ft American Home
-Refrigerator,ACF-M1020DF,0.9786,day,40.8,10.20 cu.ft American Home
-Refrigerator,CF100WPH,0.5986,day,24.9,3.50 cu.ft Beko
-Refrigerator,FCG-70PDF SL2,1.6187,day,67.4,7.10 cu.ft Fujidenzo
-Refrigerator,GMV080BAGRSG,0.7482,day,31.2,8.00 cu.ft GE
-Refrigerator,HAMDDREF-28,0.554,day,23.1,2.80 cu.ft Hanabishi
-Refrigerator,RC-67WS,1.4209,day,59.2,18.30 cu.ft Hisense
-Refrigerator,R-VG540PG7,0.9456,day,39.4,17.30 cu.ft Hitachi
-Refrigerator,GC-269VL3,1.592,day,66.3,8.00 cu.ft LG
-Refrigerator,NR-BP242VD,0.842,day,35.1,9.50 cu.ft Panasonic
-Refrigerator,SJ-DP80AS,0.615,day,25.6,6.00 cu.ft Sharp
-Refrigerator,HRF-175,0.732,day,30.5,7.20 cu.ft Haier
-Refrigerator,GR-RT234WE,0.905,day,37.7,10.00 cu.ft Toshiba
-Refrigerator,ERF-180,0.488,day,20.3,4.50 cu.ft Everest
-Air Conditioner,FP-53KHF009313A0,0.4487,hour,448.7,Conventional Condura
-Air Conditioner,KF-25I,0.7357,hour,735.7,Inverter Gree
-Air Conditioner,51ARA006HMNV-N1B,0.1215,hour,121.5,Conventional Midea
-Air Conditioner,FP-53CVUR010-703,0.3325,hour,332.5,Conventional Carrier
-Air Conditioner,FP-53KSD009313,0.4124,hour,412.4,Inverter Condura
-Air Conditioner,HWTAC06U,0.0982,hour,98.2,Conventional Hanabishi
-Air Conditioner,HS-12IPM,0.3975,hour,397.5,Inverter LG
-Air Conditioner,TJC09VRZ,0.379,hour,379,Inverter Tosot
-Air Conditioner,AHAC-TI100STI,0.1573,hour,157.3,Inverter American Home
-Air Conditioner,FP-51CH3RACCAR09KEE,0.3557,hour,355.7,Inverter Carrier
-Air Conditioner,FP-51CH3RACCCONH012EEKE,0.4728,hour,472.8,Inverter Condura
-Air Conditioner,FTKM25TVM,0.2095,hour,209.5,Inverter Daikin
-Air Conditioner,IWAR120G,0.3553,hour,355.3,Inverter Fujidenzo
-Air Conditioner,AS-09TR2S,0.3282,hour,328.2,Inverter Hisense
-Air Conditioner,LA100WL,0.2034,hour,203.4,Inverter LG
-Air Conditioner,CS/CU-U12TKQ,0.3235,hour,323.5,Inverter Panasonic
-Air Conditioner,CS/CU-U9WKQ,0.305,hour,305,Inverter Panasonic
-Air Conditioner,AH-A9UCY,0.412,hour,412,Conventional Sharp
-Air Conditioner,KAG-10HCINV,0.338,hour,338,Inverter Kolin
-Air Conditioner,ACO9C,0.465,hour,465,Conventional Whirlpool
-Air Conditioner,ASW-H09B4,0.294,hour,294,Inverter Aux
-Kitchen Appliance,AX-300E,0.2573,use,,Electric Airpot 3D
-Kitchen Appliance,RC-3C,0.1571,use,,Rice Cooker 3D
-Kitchen Appliance,RC-35E,0.1875,use,,Rice Cooker 3D
-Kitchen Appliance,RC-13C,0.4583,use,,Rice Cooker 3D
-Kitchen Appliance,HHRC-18FS,0.3167,use,,Rice Cooker Hanabishi
-Kitchen Appliance,HD 3077,0.361,use,,Rice Cooker Philips
-Kitchen Appliance,HD 3130,0.2735,use,,Rice Cooker Philips
-Kitchen Appliance,RK7321,0.3434,use,,Rice Cooker Tefal
+Refrigerator,RT20FARVDSA,1.1856,hour,49.4,Refrigerator Samsung 7.2 cu.ft
+Refrigerator,RT22FARBDSA,1.2696,hour,52.9,Refrigerator Samsung 8.3 cu.ft
+Refrigerator,RDNT250120VZP,1.8748,hour,78.1,Refrigerator Beko 8.8 cu.ft
+Refrigerator,GR-B207GLQV,1.5533,hour,64.7,Refrigerator LG 21 cu.ft
+Refrigerator,GR-B222RLCL,1.0379,hour,43.2,Refrigerator LG 8 cu.ft
+Refrigerator,GR-M602HSHL,1.2896,hour,53.7,Refrigerator LG 16.9 cu.ft
+Refrigerator,ACF-INV130W,0.3116,hour,13.0,Refrigerator American Home 13 cu.ft Inverter
+Refrigerator,ARTM-INV817S,0.1093,hour,4.6,Refrigerator American Home 8 cu.ft Inverter
+Refrigerator,RDNT230120VZP,1.7761,hour,74.0,Refrigerator Beko 7.1 cu.ft
+Refrigerator,RDNT360E20VZX,1.3686,hour,57.0,Refrigerator Beko 12.7 cu.ft
+Refrigerator,IRD-85S,0.564,hour,23.5,Refrigerator Fujidenzo 8.7 cu.ft
+Refrigerator,RBT-35 SL,0.4177,hour,17.4,Refrigerator Fujidenzo 3.5 cu.ft
+Refrigerator,RD-32WR2S,0.5091,hour,21.2,Refrigerator Hisense 8.9 cu.ft
+Refrigerator,SNF-0403,2.3432,hour,97.6,Refrigerator Sanden 14.1 cu.ft
+Refrigerator,GR-C272SLCN,0.7526,hour,31.4,Refrigerator LG 9.6 cu.ft
+Refrigerator,GR-B372SQCB,0.6989,hour,29.1,Refrigerator LG 11 cu.ft
+Refrigerator,CF316WPH,0.733,hour,30.5,Refrigerator Beko 11.2 cu.ft
+Refrigerator,FSI11HSG,2.3706,hour,98.8,Refrigerator Fabriano 11 cu.ft
+Refrigerator,RC-65WC,1.3977,hour,58.2,Refrigerator Hisense 18 cu.ft
+Refrigerator,ACF-H195DF,0.5052,hour,21.1,Refrigerator American Home 5.1 cu.ft
+Refrigerator,ACF-M1020DF,0.9786,hour,40.8,Refrigerator American Home 10.2 cu.ft
+Refrigerator,CF100WPH,0.5986,hour,24.9,Refrigerator Beko 3.5 cu.ft
+Refrigerator,FCG-70PDF SL2,1.6187,hour,67.4,Refrigerator Fujidenzo 7.1 cu.ft
+Refrigerator,GMV080BAGRSG,0.7482,hour,31.2,Refrigerator GE 8 cu.ft
+Refrigerator,HAMDDREF-28,0.554,hour,23.1,Refrigerator Hanabishi 2.8 cu.ft
+Refrigerator,RC-67WS,1.4209,hour,59.2,Refrigerator Hisense 18.3 cu.ft
+Refrigerator,R-VG540PG7,0.9456,hour,39.4,Refrigerator Hitachi 17.3 cu.ft
+Refrigerator,GC-269VL3,1.592,hour,66.3,Refrigerator LG 8 cu.ft
+Refrigerator,NR-BP242VD,0.842,hour,35.1,Refrigerator Panasonic 9.5 cu.ft
+Refrigerator,SJ-DP80AS,0.615,hour,25.6,Refrigerator Sharp 6 cu.ft
+Refrigerator,HRF-175,0.732,hour,30.5,Refrigerator Haier 7.2 cu.ft
+Refrigerator,GR-RT234WE,0.905,hour,37.7,Refrigerator Toshiba 10 cu.ft
+Refrigerator,ERF-180,0.488,hour,20.3,Refrigerator Everest 4.5 cu.ft
+Air Conditioner,FP-53KHF009313A0,0.4487,hour,448.7,Air Conditioner Condura 1HP Split Conventional
+Air Conditioner,KF-25I,0.7357,hour,735.7,Air Conditioner Gree 1HP Split Inverter
+Air Conditioner,51ARA006HMNV-N1B,0.1215,hour,121.5,Air Conditioner Midea 0.6HP Window Conventional
+Air Conditioner,FP-53CVUR010-703,0.3325,hour,332.5,Air Conditioner Carrier Conventional
+Air Conditioner,FP-53KSD009313,0.4124,hour,412.4,Air Conditioner Condura Inverter
+Air Conditioner,HWTAC06U,0.0982,hour,98.2,Air Conditioner Hanabishi Conventional
+Air Conditioner,HS-12IPM,0.3975,hour,397.5,Air Conditioner LG Inverter
+Air Conditioner,TJC09VRZ,0.379,hour,379,Air Conditioner Tosot Inverter
+Air Conditioner,AHAC-TI100STI,0.1573,hour,157.3,Air Conditioner American Home Inverter
+Air Conditioner,FP-51CH3RACCAR09KEE,0.3557,hour,355.7,Air Conditioner Carrier Inverter
+Air Conditioner,FP-51CH3RACCCONH012EEKE,0.4728,hour,472.8,Air Conditioner Condura Inverter
+Air Conditioner,FTKM25TVM,0.2095,hour,209.5,Air Conditioner Daikin 1HP Inverter Split
+Air Conditioner,IWAR120G,0.3553,hour,355.3,Air Conditioner Fujidenzo Inverter
+Air Conditioner,AS-09TR2S,0.3282,hour,328.2,Air Conditioner Hisense Inverter
+Air Conditioner,LA100WL,0.2034,hour,203.4,Air Conditioner LG Inverter
+Air Conditioner,CS/CU-U12TKQ,0.3235,hour,323.5,Air Conditioner Panasonic Inverter 1.5HP
+Air Conditioner,CS/CU-U9WKQ,0.305,hour,305,Air Conditioner Panasonic Inverter
+Air Conditioner,AH-A9UCY,0.412,hour,412,Air Conditioner Sharp Conventional
+Air Conditioner,KAG-10HCINV,0.338,hour,338,Air Conditioner Kolin Inverter
+Air Conditioner,ACO9C,0.465,hour,465,Air Conditioner Whirlpool Conventional
+Air Conditioner,ASW-H09B4,0.294,hour,294,Air Conditioner Aux Inverter
+Air Conditioner,FP-53KHF009313A0 (Condura 1.00 HP Split Conventional),0.4487,hour,448.7,Air Conditioner Condura 1HP Split Conventional
+Air Conditioner,KF-25I (Gree 1.00 HP Split Inverter),0.7357,hour,735.7,Air Conditioner Gree 1HP Split Inverter
+Air Conditioner,51ARA006HMNV-N1B (Midea 0.60 HP Window Conventional),0.1215,hour,121.5,Air Conditioner Midea 0.6HP Window Conventional
+Air Conditioner,FP51CH3RACCCONH09KEEP1CV (Condura 1.00 HP Window Inverter),0.5590,hour,559,Air Conditioner Condura 1HP Window Inverter
+Air Conditioner,CS/CU-PU12TKQ (Panasonic 1.50 HP Split Inverter),0.2211,hour,221.1,Air Conditioner Panasonic 1.5HP Split Inverter
+Air Conditioner,FTKM25TVM (Daikin 1.00 HP Split Inverter),0.2095,hour,209.5,Air Conditioner Daikin 1HP Split Inverter
+Air Conditioner,HS-24ISM (LG 2.50 HP Split Inverter),0.2434,hour,243.4,Air Conditioner LG 2.5HP Split Inverter
+Air Conditioner,FTKM71TVM (Daikin 2.20 HP Split Inverter),0.4420,hour,442,Air Conditioner Daikin 2.2HP Split Inverter
+Air Conditioner,HS-24ISU (LG 2.50 HP Split Inverter),0.7775,hour,777.5,Air Conditioner LG 2.5HP Split Inverter Older
+Kitchen Appliance,AX-300E,0.2573,use,,Airpot Electric 3D
+Kitchen Appliance,RC-3C,0.1571,use,,Rice Cooker Small 3D
+Kitchen Appliance,RC-35E,0.1875,use,,Rice Cooker 3D Standard
+Kitchen Appliance,RC-13C,0.4583,use,,Rice Cooker Large 3D
+Kitchen Appliance,HHRC-18FS,0.3167,use,,Rice Cooker Hanabishi 1.8L
+Kitchen Appliance,HD 3077,0.361,use,,Rice Cooker Philips 1.8L
+Kitchen Appliance,HD 3130,0.2735,use,,Rice Cooker Philips Compact 1.8L
+Kitchen Appliance,RK7321,0.3434,use,,Rice Cooker Tefal 1.8L
 Kitchen Appliance,AMW-20MCW,0.0808,use,,Microwave American Home
-Kitchen Appliance,FP-61MMV020LETH-S,0.0866,use,,Microwave Midea
-Kitchen Appliance,IC-38,0.3029,use,,Induction Dowell
-Kitchen Appliance,IH7208,0.3073,use,,Induction Tefal
-Kitchen Appliance,PK-3170,0.152,use,,Electric Kettle 3D
-Kitchen Appliance,KI150D10,0.1364,use,,Electric Kettle Tefal
+Kitchen Appliance,FP-61MMV020LETH-S,0.0866,use,,Microwave Midea 20L
+Kitchen Appliance,IC-38,0.3029,use,,Induction Cooker Dowell Standard
+Kitchen Appliance,IH7208,0.3073,use,,Induction Cooker Tefal
+Kitchen Appliance,PK-3170,0.152,use,,Electric Kettle 3D Standard
+Kitchen Appliance,KI150D10,0.1364,use,,Electric Kettle Tefal 1.7L
 Kitchen Appliance,IRC-2000,0.298,use,,Rice Cooker Imarflex
 Kitchen Appliance,KW-3833,0.162,use,,Electric Kettle Kyowa
-Kitchen Appliance,EMO-20L,0.094,use,,Microwave Eurotek
-Kitchen Appliance,HIC-1600,0.289,use,,Induction Hanabishi
+Kitchen Appliance,EMO-20L,0.094,use,,Microwave Eurotek 20L
+Kitchen Appliance,HIC-1600,0.289,use,,Induction Cooker Hanabishi Large
 Kitchen Appliance,AF-35,0.176,use,,Air Fryer Astron
-Gadgets / AV / Computers,CN-25H3X,0.0987,hour,98.7,TV LG 24"
-Gadgets / AV / Computers,CT-21K30MH,0.0593,hour,59.3,TV Samsung 21"
-Gadgets / AV / Computers,PS43F4500AR,0.1528,hour,152.8,TV Samsung 43"
-Gadgets / AV / Computers,S-UA55H7000AK,0.1146,hour,114.6,TV Samsung 55"
-Gadgets / AV / Computers,32LH604B.APH,0.034,hour,34,TV LG 32"
-Gadgets / AV / Computers,55UH600T.APH,0.0844,hour,84.4,TV LG 55"
-Gadgets / AV / Computers,43DL541,0.057,hour,57,TV Devant 43"
-Gadgets / AV / Computers,32K312,0.041,hour,41,TV Hisense 32"
-Gadgets / AV / Computers,LC-32LE360D3,0.0389,hour,38.9,TV Sharp 32"
-Gadgets / AV / Computers,KDL-32W607D,0.03,hour,30,TV Sony 32"
-Gadgets / AV / Computers,LED32S4900,0.036,hour,36,TV TCL 32"
-Gadgets / AV / Computers,S-UA55KU6300GXXP-0,0.1124,hour,112.4,TV Samsung 55"
-Gadgets / AV / Computers,SA220Q,0.024,hour,24,Monitor Acer 21"
-Gadgets / AV / Computers,P2419H,0.031,hour,31,Monitor Dell 24"
-Gadgets / AV / Computers,24mh,0.028,hour,28,Monitor HP 24"
-Gadgets / AV / Computers,L24e-20,0.026,hour,26,Monitor Lenovo 24"
-Gadgets / AV / Computers,VA2261H-8,0.022,hour,22,Monitor ViewSonic 22"
-Electric Fan,16" Stand Fan Generic,0.06,hour,60,Typical non-branded
-Electric Fan,Hanabishi 16" Stand,0.055,hour,55,Mid-range common
-Electric Fan,3D 18" Wall Fan,0.065,hour,65,Meralco tested approx
-Electric Fan,Asahi 14" Desk Fan,0.045,hour,45,Small bedroom fan
-Electric Shower Heater,Panasonic DH-3VS1 3.5kW,3.5,minutes,3500,Instant single-point
-Electric Shower Heater,Generic 3.5-4.5kW,4.0,minutes,4000,Common no-brand
-Electric Shower Heater,Signa/Hanabishi 4.5kW,4.5,minutes,4500,Higher power model
-Electric Shower Heater,Stiebel Eltron 3.5kW,3.5,minutes,3500,Premium efficient
-Washing Machine,Panasonic NA-F70B5 7kg,0.25,use,250,Semi-auto typical
-Washing Machine,LG 8kg Inverter Top Load,0.18,use,180,Inverter efficient
-Washing Machine,Sharp Semi-Auto 6.5kg,0.30,use,300,Older style
-Water Dispenser,Hot & Cold Generic,0.45,day,,Always-on typical
-Water Dispenser,Hot & Cold Hanabishi/American Home,0.38,day,,Common model
-Wi-Fi / Always-on,Wi-Fi Always-on,0.05,day,,Typical always-on small device
-Lighting,Whole house LED mix 10×9W,0.09,hour,90,Total estimate for house
+Kitchen Appliance,JEI2560SPSS,0.1051,use,,Microwave GE 25L
+Kitchen Appliance,JEI2870SPSS,0.1181,use,,Microwave GE 28L
+Kitchen Appliance,HIC-90,0.3663,use,,Induction Cooker Hanabishi Compact
+Kitchen Appliance,GVX2,0.0003,use,,Coffee Grinder Krups
+Kitchen Appliance,XP5620,0.0085,use,,Espresso Machine Krups
+Kitchen Appliance,ME12340DVSL,0.0940,use,,Microwave Mabe 23L
+Kitchen Appliance,MEI3070DVSB,0.1183,use,,Microwave Mabe 30L
+Kitchen Appliance,MEI2570DVSB,0.1092,use,,Microwave Mabe 25L
+Kitchen Appliance,DO-9001,0.1939,use,,Juicer Matstone
+Kitchen Appliance,FP-68PKL017LDTMT,0.1468,use,,Electric Kettle Midea
+Kitchen Appliance,FP-60ISL160WETLN,0.3430,use,,Induction Cooker Midea
+Kitchen Appliance,FP61MMV020LETH-S,0.0866,use,,Microwave Midea 20L Basic
+Kitchen Appliance,FP61MMV020LMTLW,0.0809,use,,Microwave Midea 20L Variant
+Kitchen Appliance,FP-62KCR018LETMG,0.3087,use,,Multi-Cooker Midea
+Kitchen Appliance,HD4932,0.4493,use,,Induction Cooker Philips Large
+Kitchen Appliance,HD3077,0.3610,use,,Rice Cooker Philips 1.8L Advanced
+Kitchen Appliance,HD9240,0.4010,use,,Air Fryer Philips
+Kitchen Appliance,HD2139,0.5342,use,,Pressure Cooker Philips 6L
+Kitchen Appliance,R-380F-S,0.1361,use,,Microwave Sharp 33L
+Kitchen Appliance,LF01-P,0.3480,use,,Air Fryer Tefal FX1000
+Kitchen Appliance,GC302,0.2586,use,,Electric Grill Tefal
+Kitchen Appliance,FR4950,0.3367,use,,Multi Cooker Tefal Large
+Kitchen Appliance,RK1066,0.3169,use,,Multi Cooker Tefal Medium
+Kitchen Appliance,RK7058,0.3010,use,,Multi Cooker Tefal Compact
+Kitchen Appliance,WDS-12BL,0.1705,use,,Water Dispenser Dowell Hot/Cold
+Kitchen Appliance,WDS-15S,0.1333,use,,Water Dispenser Dowell Standard
+Kitchen Appliance,WDS-50H,0.0851,use,,Water Dispenser Dowell Compact
+Kitchen Appliance,WDS-80,0.1493,use,,Water Dispenser Dowell Large
+Kitchen Appliance,MWP305ES,0.1252,use,,Microwave Whirlpool 30L
+Kitchen Appliance,MWP301BL,0.1219,use,,Microwave Whirlpool 30L Black
+Kitchen Appliance,WD-102B,0.0955,use,,Water Dispenser Fujidenzo Tabletop
+Kitchen Appliance,PK-17LGS,0.1718,use,,Electric Kettle 3D 1.7L
+Kitchen Appliance,PK-18LS,0.1673,use,,Electric Kettle 3D 1.8L
+Kitchen Appliance,RCF-8C,0.2821,use,,Rice Cooker 3D 1.5L Small
+Kitchen Appliance,RCF-10C,0.3364,use,,Rice Cooker 3D 1.8L
+Kitchen Appliance,RCF-50C,1.44,use,,Rice Cooker 3D 8.5L Large
+Kitchen Appliance,CR-7G,0.6431,use,,Turbo Roaster 3D 10L
+Kitchen Appliance,MX-300SMS,0.0027,use,,Mixer 3D Small
+Kitchen Appliance,MX-947GST,0.0014,use,,Mixer 3D Compact
+Kitchen Appliance,JE-1813S,0.0069,use,,Juice Extractor 3D 0.6L
+Kitchen Appliance,BL-508,0.0074,use,,Blender 3D 1.5L
+Kitchen Appliance,IC-2000SL,0.2961,use,,Induction Cooker 3D 2000W
+Kitchen Appliance,IC-1500SL,0.2918,use,,Induction Cooker 3D 1500W
+Kitchen Appliance,EO-28RC,0.5281,use,,Electric Oven 3D 28L
+Kitchen Appliance,EO-42RC,0.6488,use,,Electric Oven 3D 42L Large
+Kitchen Appliance,RCF-12C,0.4022,use,,Rice Cooker 3D 2.2L
+Kitchen Appliance,RC-10E,0.3360,use,,Rice Cooker 3D 1.8L Basic
+Kitchen Appliance,MF-10C,0.3400,use,,Rice Cooker 3D 1.8L Multi
+Kitchen Appliance,MF-8C,0.2622,use,,Rice Cooker 3D 1.5L Mini
+Kitchen Appliance,OT-G901,0.044,use,,Oven Toaster 3D 10L
+Kitchen Appliance,OT-12L,0.071,use,,Oven Toaster 3D 12L
+Kitchen Appliance,CWB-105,0.8589,use,,Coffee Maker 3D 12L Large
+Kitchen Appliance,WD-600SL,0.0267,use,,Water Dispenser 3D Small
+Kitchen Appliance,WD-570ECT,0.0379,use,,Water Dispenser 3D Compact
+Kitchen Appliance,SC-35SF,0.1938,use,,Slow Cooker 3D 3.5L
+Kitchen Appliance,EO-26RCDG,0.507,use,,Electric Oven 3D 26L
+Kitchen Appliance,CM-1500S,0.1229,use,,Coffee Maker 3D 1.5L
+Kitchen Appliance,CY601D,0.4905,use,,Multi-Cooker Tefal 4L
+Kitchen Appliance,CY625D,0.3718,use,,Multi-Cooker Tefal 3.5L
+Kitchen Appliance,BL4271,0.0034,use,,Blender Tefal 1.25L
+Kitchen Appliance,BL425565,0.0038,use,,Blender Tefal 1.25L Compact
+Kitchen Appliance,BDC6C55X,2.2721,use,,Oven Beko 69L Multi-Function
+Kitchen Appliance,FSM66001GBR,1.3536,use,,Oven Beko 72L Multi-Functional
+Kitchen Appliance,FSM63320TXDL,1.4543,use,,Freestanding Cooker Beko 72L
+Kitchen Appliance,EY701D27,0.3092,use,,Air Fryer Tefal 5.6L
+Kitchen Appliance,CY625D65,0.3881,use,,Multi-Cooker Tefal Smart Pro
+Kitchen Appliance,CY601D65,0.5110,use,,Multi-Cooker Tefal Smart
+Kitchen Appliance,K02618,0.0829,use,,Kettle Tefal SafeTea
+Kitchen Appliance,CM312,0.0602,use,,Coffee Maker Tefal 6-cup
+Kitchen Appliance,BL811D,0.0050,use,,Blender Tefal Perfect Mix+
+Kitchen Appliance,EY201827,0.3159,use,,Air Fryer Tefal Easy Fry Classic
+Kitchen Appliance,IH720865,0.0311,use,,Induction Hob Tefal Single
+Kitchen Appliance,KO2002127,0.1478,use,,Kettle Tefal Element
+Kitchen Appliance,BF812121,0.0786,use,,Kettle Tefal Mini
+Kitchen Appliance,EY401D27,0.2831,use,,Air Fryer Tefal Standard
+Kitchen Appliance,CB6A0827,0.9724,use,,Multi Grill Tefal Health
+Kitchen Appliance,AC1732BLP,0.5796,use,,Induction Hob Whirlpool 70cm
+Kitchen Appliance,ACH732BLP,0.6410,use,,Induction Hob Whirlpool Vitro 70cm
+Kitchen Appliance,WCTD104PH,0.4242,use,,Dishwasher Whirlpool 40cm Countertop
+Kitchen Appliance,WFC3C26,0.7664,use,,Dishwasher Whirlpool 60cm
+Electric Fan,16" Stand Fan Generic,0.06,hour,60,Fan Stand 16" Generic
+Electric Fan,Hanabishi 16" Stand,0.055,hour,55,Fan Stand Hanabishi 16"
+Electric Fan,3D 18" Wall Fan,0.065,hour,65,Fan Wall 18" 3D
+Electric Fan,Asahi 14" Desk Fan,0.045,hour,45,Fan Desk Asahi 14"
+Electric Shower Heater,Panasonic DH-3VS1 3.5kW,3.5,minutes,3500,Shower Heater Panasonic 3.5kW
+Electric Shower Heater,Generic 3.5-4.5kW,4.0,minutes,4000,Shower Heater Generic 3.5-4.5kW
+Electric Shower Heater,Signa/Hanabishi 4.5kW,4.5,minutes,4500,Shower Heater Hanabishi 4.5kW
+Electric Shower Heater,Stiebel Eltron 3.5kW,3.5,minutes,3500,Shower Heater Stiebel Eltron 3.5kW
+Washing Machine,Panasonic NA-F70B5 7kg,0.25,use,250,Washing Machine Panasonic 7kg Semi-Auto
+Washing Machine,LG 8kg Inverter Top Load,0.18,use,180,Washing Machine LG 8kg Inverter Top
+Washing Machine,Sharp Semi-Auto 6.5kg,0.30,use,300,Washing Machine Sharp 6.5kg Semi-Auto
+Water Dispenser,Hot & Cold Generic,0.45,hour,,Water Dispenser Hot/Cold Generic
+Washing Machine,Sharp ES-6030T 6.0 Semi-Automatic Twin Tub,0.0449,use,44.9,Washing Machine Sharp 6kg Twin Tub Efficient
+Washing Machine,LG T210VSPW 7.0 Top Load Inverter,0.0494,use,49.4,Washing Machine LG 7kg Top Inverter
+Washing Machine,LG T2108VS2M 8.0 Top Load Inverter,0.0496,use,49.6,Washing Machine LG 8kg Top Inverter
+Washing Machine,Whirlpool WVMD 1208 BHG 12.0 Top Load Inverter,0.0503,use,50.3,Washing Machine Whirlpool 12kg Top Inverter
+Washing Machine,Midea FP-90LTL070GETL-N 7.0 Top Load Conventional,0.0593,use,59.3,Washing Machine Midea 7kg Top Conventional
+Washing Machine,Samsung WA65H4200SW 6.5 Top Load Conventional,0.0609,use,60.9,Washing Machine Samsung 6.5kg Top Conventional
+Washing Machine,LG T2309VSAM 9.0 Top Load Inverter,0.0617,use,61.7,Washing Machine LG 9kg Top Inverter
+Washing Machine,Fujidenzo JWT-601 6.0 Twin Tub,0.0610,use,61.0,Washing Machine Fujidenzo 6kg Twin Tub
+Washing Machine,LG T2385VS2M 8.5 Top Load Inverter,0.0649,use,64.9,Washing Machine LG 8.5kg Top Inverter
+Washing Machine,Dowell WMT-700 7.0 Semi-Automatic Twin Tub,0.0649,use,64.9,Washing Machine Dowell 7kg Twin Tub
+Washing Machine,Samsung WA90F5S7 9.0 Top Load Inverter,0.0658,use,65.8,Washing Machine Samsung 9kg Top Inverter
+Washing Machine,Whirlpool LSP680 GP 6.8 Top Load Conventional,0.0556,use,55.6,Washing Machine Whirlpool 6.8kg Top Conventional
+Washing Machine,Whirlpool LFP580 GR 5.8 Top Load Conventional,0.0319,use,31.9,Washing Machine Whirlpool 5.8kg Top Conventional
+Washing Machine,Fujidenzo JSD 681 6.8 Spin Dryer,0.0193,use,19.3,Spin Dryer Fujidenzo 6.8kg
+Washing Machine,Fujidenzo JSD 801 8.0 Spin Dryer,0.0198,use,19.8,Spin Dryer Fujidenzo 8kg
+Washing Machine,Beko BTD1059S 10.20 Top Load Non-Inverter,0.0482,use,48.2,Washing Machine Beko 10.2kg Top Non-Inverter
+Washing Machine,LG TC2402NTWV 2.0 Top Load Inverter,0.0587,use,58.7,Washing Machine LG 2kg Top Inverter Small
+Washing Machine,Midea FP-90LTT060GMTM-B 6.0 Semi-Automatic Twin Tub,0.0706,use,70.6,Washing Machine Midea 6kg Twin Tub
+Washing Machine,Whirlpool LSP780 GP 7.8 Top Load Conventional,0.0622,use,62.2,Washing Machine Whirlpool 7.8kg Top Conventional
+Washing Machine,Whirlpool LSP880 GP 8.8 Top Load Conventional,0.0710,use,71.0,Washing Machine Whirlpool 8.8kg Top Conventional
+Washing Machine,LG TH2517DSAV 17.0 Top Load Inverter,0.0819,use,81.9,Washing Machine LG 17kg Top Inverter Large
+Washing Machine,Samsung WA14J6750SP 14.0 Top Load Inverter,0.0845,use,84.5,Washing Machine Samsung 14kg Top Inverter
+Washing Machine,Whirlpool WFRB 752 BHW 7.5 Front Load Inverter,0.0832,use,83.2,Washing Machine Whirlpool 7.5kg Front Inverter
+Washing Machine,Beko WTLD120D 12.00 Top Load Non-Inverter,0.0832,use,83.2,Washing Machine Beko 12kg Top Non-Inverter
+Washing Machine,Whirlpool WFRB 852 BHG 8.5 Front Load Inverter,0.0838,use,83.8,Washing Machine Whirlpool 8.5kg Front Inverter
+Washing Machine,Fujidenzo IJWA1050 VT 10.50 Fully Automatic,0.0831,use,83.1,Washing Machine Fujidenzo 10.5kg Fully Auto
+Washing Machine,Samsung WA16J6750SP 16.0 Top Load Inverter,0.0868,use,86.8,Washing Machine Samsung 16kg Top Inverter
+Washing Machine,LG WF-T7070SW 7.0 Top Load Conventional,0.0860,use,86.0,Washing Machine LG 7kg Top Conventional
+Washing Machine,American Home AWF-M6016 6.0 Top Load Conventional,0.0982,use,98.2,Washing Machine American Home 6kg Top Conventional
+Washing Machine,Dowell WFA-65 6.5 Top Load Conventional,0.0995,use,99.5,Washing Machine Dowell 6.5kg Top Conventional
+Washing Machine,LG FC1206N4W 6.00 Front Load DD,0.1199,use,119.9,Washing Machine LG 6kg Front Direct Drive
+Washing Machine,Midea FP-90LTL090GETM-N 8.0 Top Load Conventional,0.1533,use,153.3,Washing Machine Midea 8kg Top Conventional
+Washing Machine,Beko WTL 7019W 7.0 Top Load Conventional,0.0937,use,93.7,Washing Machine Beko 7kg Top Conventional
+Washing Machine,Samsung WA70H4000SG 7.0 Top Load Conventional,0.1597,use,159.7,Washing Machine Samsung 7kg Top Conventional
+Washing Machine,LG FV1450H1B 7.0 Front Load Inverter,0.1479,use,147.9,Washing Machine LG 7kg Front Inverter
+Washing Machine,Beko WMY71283LB3 7.0 Front Load Conventional,0.8757,use,875.7,Washing Machine Beko 7kg Front Conventional
+Washing Machine,Samsung WW75J4213IW 7.5 Front Load Inverter,0.4945,use,494.5,Washing Machine Samsung 7.5kg Front Inverter
+Washing Machine,LG FC1407S4W 7.0 Front Load Inverter,1.1358,use,1135.8,Washing Machine LG 7kg Front Inverter Large use
+Washing Machine,Samsung WD10J6410AX 10.5 Washer-Dryer Inverter,4.4500,use,4450.0,Washer-Dryer Samsung 10.5kg Inverter
+Washing Machine,Samsung WD14F5K5ASG 14.0 Washer-Dryer Inverter,6.3200,use,6320.0,Washer-Dryer Samsung 14kg Inverter Large
+Washing Machine,LG RC09VHP2V 9.0 Front Load Heat Pump Dryer,2.3657,use,2365.7,Dryer LG 9kg Heat Pump Front Load
+Water Dispenser,Hot & Cold Hanabishi/American Home,0.38,hour,,Water Dispenser Hot/Cold Hanabishi
+Wi-Fi / Always-on,Wi-Fi Always-on,0.05,hour,,Wi-Fi Router Always-On Typical
+Lighting,Whole house LED mix 10×9W,0.09,hour,90,LED Lighting Whole House 90W Total
+General Appliances,FB-B02 (3D Floor Polisher),0.1727,use,172.7,Floor Polisher 3D
+General Appliances,SM-1800 (3D Flat Iron),0.2143,use,214.3,Flat Iron 3D Standard
+General Appliances,SM-2000 II (3D Flat Iron),0.2682,use,268.2,Flat Iron 3D Advanced
+General Appliances,MC-103 (3D Vacuum Cleaner),0.8996,use,899.6,Vacuum Cleaner 3D Large
+General Appliances,MC-700ST (3D Vacuum Cleaner),0.5045,use,504.5,Vacuum Cleaner 3D Standard
+General Appliances,SI-711 (Dowell Steam Iron),0.5102,use,510.2,Steam Iron Dowell Large
+General Appliances,SI-745 (Dowell Steam Iron),0.3758,use,375.8,Steam Iron Dowell
+General Appliances,DI-518AL (Dowell Flat Iron),0.1787,use,178.7,Flat Iron Dowell Basic
+General Appliances,DI-535NS (Dowell Flat Iron),0.1678,use,167.8,Flat Iron Dowell Compact
+General Appliances,HFSWD-800 (Hanabishi Water Dispenser),0.1660,use,166,Water Dispenser Hanabishi Hot/Cold
+General Appliances,FP-67WTR350WMTL-W (Midea Water Heater),0.5968,use,596.8,Water Heater Midea Standard
+General Appliances,FP-67WTR450WMTH-S (Midea Water Heater),0.7577,use,757.7,Water Heater Midea Large
+General Appliances,GC 4910 (Philips Steam Iron),0.2982,use,298.2,Steam Iron Philips Compact
+General Appliances,GC 7035 (Philips Steam Iron),0.4435,use,443.5,Steam Iron Philips Advanced
+General Appliances,FV1026 (Tefal Steam Iron),0.4290,use,429,Steam Iron Tefal Essential
+General Appliances,FV1320 (Tefal Steam Iron),0.3936,use,393.6,Steam Iron Tefal Access
+General Appliances,FV1520 (Tefal Steam Iron),0.4402,use,440.2,Steam Iron Tefal Turbo
+General Appliances,FV3910 (Tefal Steam Iron),0.3583,use,358.3,Steam Iron Tefal Easygliss
+General Appliances,FV4010 (Tefal Steam Iron),0.4198,use,419.8,Steam Iron Tefal Ultragliss
+General Appliances,FV4944 (Tefal Steam Iron),0.4239,use,423.9,Steam Iron Tefal Ultimate
+General Appliances,DR8085 (Tefal Handheld Garment Steamer),0.1373,use,137.3,Garment Steamer Tefal Handheld
+General Appliances,IS8380 (Tefal Standard Garment Steamer),0.2563,use,256.3,Garment Steamer Tefal Standard
+General Appliances,VC-WD1400 (3D Vacuum Cleaner),1.1500,use,1150,Vacuum Cleaner 3D Heavy Duty
+General Appliances,FP-C03 (3D Floor Polisher),0.0089,use,8.9,Floor Polisher 3D Low Power
+General Appliances,IT3420 (Tefal Garment Steamer),1.33,use,1330,Garment Steamer Tefal Pro
+General Appliances,IT3440 (Tefal Garment Steamer),1.31,use,1310,Garment Steamer Tefal ProStyle
+General Appliances,FV4980 (Tefal Steam Iron),0.7595,use,759.5,Steam Iron Tefal High Power
+General Appliances,FYP203 (Firefly 15.00 YS AP with UVC - small),0.0397,use,39.7,Air Purifier Firefly Small UVC
+General Appliances,FHF101 (Firefly 7.00 Home personal),0.0530,use,53,Fan Personal Firefly Home
+General Appliances,FHF103 (Firefly 30.00 Portable Air Cooler),0.1894,use,189.4,Air Cooler Portable Firefly
+General Appliances,FHF104 (Firefly 80.00 Turbo Air Cooler),0.2740,use,274,Air Cooler Turbo Firefly
+General Appliances,FYP101 (Firefly 10.00 YS mini AP with UVC),0.0077,use,7.7,Air Purifier Mini Firefly UVC
+General Appliances,FYP102 (Firefly 10.00 YS AP with UVC - mini),0.0052,use,5.2,Air Purifier Mini Firefly UVC Variant
+General Appliances,FYP304 (Firefly 30.00 YS AP with UVC - medium),0.0306,use,30.6,Air Purifier Medium Firefly UVC
+General Appliances,FYP302 (Firefly 30.00 YS Smart AP with UVC - medium),0.0650,use,65,Air Purifier Smart Medium Firefly UVC
+General Appliances,FYP401 (Firefly 70.00 YS Smart AP with wifi ionizer and uvc),0.0556,use,55.6,Air Purifier Smart Wifi Firefly 70
+General Appliances,FYP303 (Firefly 30.00 YS Smart AP with wifi ionizer and uvc),0.0546,use,54.6,Air Purifier Smart Wifi Firefly 30
+General Appliances,FHF102 (Firefly 7.00 Home Tower),0.0296,use,29.6,Fan Tower Firefly Home
+General Appliances,FYP305 (Firefly 30.00 YS AP with UVC - medium),0.0043,use,4.3,Air Purifier Medium Firefly UVC Low
+General Appliances,FYH102 (Firefly 7.00 YS Air Cool&Warm Mist Humidifier),0.0984,use,98.4,Humidifier Mist Firefly Cool/Warm
+General Appliances,SC 1 EasyFix (Karcher 0.20 Steam Cleaner),0.1383,use,138.3,Steam Cleaner Karcher EasyFix
+General Appliances,SC 2 DELUXE (Karcher 1.00 Steam Cleaner),0.6168,use,616.8,Steam Cleaner Karcher Deluxe
+General Appliances,SC 3 (Karcher 1.00 Steam Cleaner),0.6852,use,685.2,Steam Cleaner Karcher Standard
+General Appliances,VC4i (Karcher 190.00 Handheld Vacuum Cleaner),0.0532,use,53.2,Vacuum Handheld Karcher
+General Appliances,SV7 (Karcher 2200.00 Steam Vacuum Cleaner),0.7775,use,777.5,Steam Vacuum Karcher
+General Appliances,KDM-20LES (Kolin 20.00 Dehumidifier),0.2055,use,205.5,Dehumidifier Kolin 20L
+General Appliances,B03H (SANDA 5000 can use USB charger),0.0005,use,0.5,USB Charger SANDA
+General Appliances,LS02 (HAYLOU 5000 can use USB charger),0.0005,use,0.5,USB Charger HAYLOU
+General Appliances,Y-3 (FAST CHARGE 10.00),0.0183,use,18.3,Fast Charge Adapter Y-3
+General Appliances,WEDO Multi Massager,0.0031,use,3.1,Massager Multi WEDO USB
+General Appliances,YATAILE 1.80 Folding Mini Washing Machine,0.0274,use,27.4,Mini Washer Folding YATAILE
+General Appliances,SELF HEATING MUG (SS-NO1 16.00),0.0173,use,17.3,Self Heating Mug SS-NO1
+General Appliances,QT1510G0 (Tefal 1.00 Upright Garment Steamer),1.0508,use,1050.8,Garment Steamer Upright Tefal
+General Appliances,FV1721 (Tefal 2070 Ecomaster Steam Iron),0.7789,use,778.9,Steam Iron Tefal Ecomaster
+General Appliances,FV1026 (Tefal 1200 Steam Essential),0.6972,use,697.2,Steam Iron Tefal Essential 1200W
+General Appliances,IT3420MO (Tefal 1.50 ProStyle Garment Steamer),1.6664,use,1666.4,Garment Steamer Tefal ProStyle
+General Appliances,IT6540 (Tefal 2.00 Upright Garment Steamer),1.4445,use,1444.5,Garment Steamer Upright Tefal 2.0
