@@ -283,7 +283,7 @@ input:focus, select:focus {
 }
 
 .detail-box strong {
-  color: #00796b; /* medium teal for label */
+  color: #00796b;
   font-size: 1.15rem;
   display: block;
   margin-bottom: 0.8rem;
@@ -294,4 +294,52 @@ input:focus, select:focus {
   box-shadow: 0 12px 25px rgba(0, 77, 64, 0.25);
 }
 
+/* Buttons */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 1.35rem;
+  background: linear-gradient(135deg, var(--accent), #2dd4bf);
+  border: none;
+  color: white;
+  font-size: 1.22rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 12px 30px rgba(20, 184, 166, 0.45);
+}
 
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(20, 184, 166, 0.6);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-add {
+  display: inline-block;
+  padding: 0.95rem 1.6rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), #2dd4bf);
+  border: none;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 25px rgba(20, 184, 166, 0.42);
+  min-width: 210px;
+  text-align: center;
+}
+
+.btn-add:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(20, 184, 166, 0.58);
+}
+
+.btn-add:active {
+  transform: translateY(0);
+}
