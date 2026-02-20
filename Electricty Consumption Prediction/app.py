@@ -37,95 +37,128 @@ appliance_lookup = appliances_df.set_index("Model").to_dict("index")
 @app.route("/", methods=["GET", "POST"])
 def home():
     result = None
+    num_appliances = 5  # default starting number
 
     if request.method == "POST":
-        household_size = int(request.form["household_size"])
-        heat_index = float(request.form["heat_index"])
-        day_type = request.form["day_type"]
+        action = request.form.get("action", "calculate")
 
-        is_weekend = 1 if day_type in ["Saturday", "Sunday"] else 0
+        # Get current number of shown appliance fields
+        try:
+            num_appliances = int(request.form.get("num_appliances", 5))
+        except (ValueError, TypeError):
+            num_appliances = 5
 
-        base_kwh = 0.0
-        ac_hours = 0
-        rice_uses = 0
-        tv_hours = 0
-        has_ac = 0
-        has_wifi = 0
+        if action == "add_more":
+            # Just add 2 more slots, no calculation, no reset
+            num_appliances += 2
+            num_appliances = min(num_appliances, 20)  # reasonable max
 
-        drivers = []
+        elif action == "calculate":
+            # Reset to 5 slots when calculating
+            num_appliances = 5
 
-        for i in range(1, 6):
-            model_name = request.form.get(f"model_{i}")
-            usage = request.form.get(f"usage_{i}")
+            household_size_raw = request.form.get("household_size", "4")
+            try:
+                household_size = int(household_size_raw)
+                if household_size > 12:
+                    household_size = 12
+            except ValueError:
+                household_size = 4
 
-            if not model_name or not usage:
-                continue
+            heat_index_raw = request.form.get("heat_index", "40")
+            try:
+                heat_index = float(heat_index_raw)
+            except ValueError:
+                heat_index = 40.0
 
-            usage = float(usage)
-            row = appliance_lookup.get(model_name)
-            if not row:
-                continue
+            day_type = request.form.get("day_type", "Weekday")
+            is_weekend = 1 if day_type in ["Saturday", "Sunday"] else 0
 
-            kwh_value = row["kWh_value"]
-            unit = row["Usage_Unit"]
+            base_kwh = 0.0
+            ac_hours = 0
+            rice_uses = 0
+            tv_hours = 0
+            has_ac = 0
+            has_wifi = 0
+            drivers = []
 
-            if unit == "hour":
-                kwh = kwh_value * usage
-            elif unit == "use":
-                kwh = kwh_value * usage
-            elif unit == "minutes":
-                kwh = kwh_value * (usage / 60)
-            else:
-                kwh = kwh_value
+            for i in range(1, 21):  # safe upper limit
+                model_name = request.form.get(f"model_{i}")
+                usage_str = request.form.get(f"usage_{i}")
 
-            base_kwh += kwh
+                if not model_name or not usage_str:
+                    continue
 
-            notes = row.get("Notes", "")
+                try:
+                    usage = float(usage_str)
+                except ValueError:
+                    continue
 
-            if row["Category"] == "Air Conditioner":
-                has_ac = 1
-                ac_hours += usage
+                row = appliance_lookup.get(model_name)
+                if not row:
+                    continue
 
-            if "Rice Cooker" in notes:
-                rice_uses += usage
+                kwh_value = row["kWh_value"]
+                unit = row["Usage_Unit"]
 
-            if "TV" in notes:
-                tv_hours += usage
+                if unit == "hour":
+                    kwh = kwh_value * usage
+                elif unit == "use":
+                    kwh = kwh_value * usage
+                elif unit == "minutes":
+                    kwh = kwh_value * (usage / 60)
+                else:
+                    kwh = kwh_value
 
-            if row["Category"] == "Wi-Fi / Always-on":
-                has_wifi = 1
+                base_kwh += kwh
 
-            drivers.append(f"{row['Category']} – {notes or model_name}")
+                notes = row.get("Notes", "")
 
-        X = pd.DataFrame([{
-            "household_size": household_size,
-            "has_ac": has_ac,
-            "ac_hours_day": ac_hours,
-            "rice_uses_day": rice_uses,
-            "tv_hours_day": tv_hours,
-            "has_wifi": has_wifi,
-            "heat_index": heat_index,
-            "is_weekend": is_weekend
-        }], columns=FEATURE_COLS)
+                if row["Category"] == "Air Conditioner":
+                    has_ac = 1
+                    ac_hours += usage
 
-        ml_kwh = model.predict(X)[0]
+                if "Rice Cooker" in notes:
+                    rice_uses += usage
 
-        final_kwh = (base_kwh * 0.6) + (ml_kwh * 0.4)
-        daily_bill = final_kwh * RATE_PER_KWH
+                if "TV" in notes:
+                    tv_hours += usage
 
-        result = {
-            "daily_kwh": round(final_kwh, 2),
-            "daily_bill": round(daily_bill, 2),
-            "base_kwh": round(base_kwh, 2),
-            "bill_low": round(daily_bill * 0.9, 2),
-            "bill_high": round(daily_bill * 1.1, 2),
-            "drivers": list(set(drivers))[:5]
-        }
+                if row["Category"] == "Wi-Fi / Always-on":
+                    has_wifi = 1
+
+                drivers.append(f"{row['Category']} – {notes or model_name}")
+
+            X = pd.DataFrame([{
+                "household_size": household_size,
+                "has_ac": has_ac,
+                "ac_hours_day": ac_hours,
+                "rice_uses_day": rice_uses,
+                "tv_hours_day": tv_hours,
+                "has_wifi": has_wifi,
+                "heat_index": heat_index,
+                "is_weekend": is_weekend
+            }], columns=FEATURE_COLS)
+
+            ml_kwh = model.predict(X)[0]
+
+            final_kwh = (base_kwh * 0.6) + (ml_kwh * 0.4)
+            daily_bill = final_kwh * RATE_PER_KWH
+
+            result = {
+                "daily_kwh": round(final_kwh, 2),
+                "daily_bill": round(daily_bill, 2),
+                "base_kwh": round(base_kwh, 2),
+                "bill_low": round(daily_bill * 0.9, 2),
+                "bill_high": round(daily_bill * 1.1, 2),
+                "drivers": list(set(drivers))[:5]
+            }
 
     return render_template(
         "index.html",
         result=result,
-        grouped_models=grouped_models
+        grouped_models=grouped_models,
+        num_appliances=num_appliances
     )
 
 
