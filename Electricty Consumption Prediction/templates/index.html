@@ -22,18 +22,20 @@
     <p>Enter your appliances and daily usage to estimate your electricity consumption.</p>
   </div>
 
-  <form class="calculator" method="POST">
-
+  <form class="calculator" method="POST" id="main-form">
+    <input type="hidden" name="num_appliances" value="{{ num_appliances }}">
+    <input type="hidden" name="custom_count" value="{{ custom_count | default(1) }}">
     <div class="input-group">
       <label>Household Size</label>
       <input type="number" name="household_size" min="1" max="20" value="{{ request.form.household_size or 4 }}"
         required>
-      <p class="form-hint note">Typical range: 4–8 people. Values >12 are capped for accuracy.</p>
+      <p class="form-hint note">Typical range: 4–8 people. Values >12 are capped.</p>
     </div>
 
     <div class="input-group">
       <label>Heat Index (Feels Like °C)</label>
       <input type="number" step="0.1" name="heat_index" value="{{ request.form.heat_index or 40 }}" required>
+      <p class="form-hint note">Typical in Philippines: 30–42°C</p>
     </div>
 
     <div class="input-group">
@@ -46,73 +48,154 @@
       </select>
     </div>
 
+    <p class="appliance-count"><strong>{{ num_appliances }} appliances</strong> • Maximum 20</p>
+
     <div class="appliance-list">
       {% for i in range(1, num_appliances + 1) %}
-      <div class="appliance-card">
+      <div class="appliance-card" id="appliance-{{ i }}">
         <h3>Appliance {{ i }}</h3>
 
-        <label>Category</label>
-        <select name="category_{{ i }}">
-          <option value="">Select Category</option>
-          {% for cat in grouped_models.keys() %}
-          <option value="{{ cat }}" {% if request.form.get('category_' ~ i)==cat %}selected{% endif %}>
-            {{ cat }}
-          </option>
-          {% endfor %}
-        </select>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Category</label>
+            <select name="category_{{ i }}">
+              <option value="">Select Category</option>
+              {% for cat in grouped_models.keys() | sort %}
+              <option value="{{ cat }}" {% if request.form.get('category_' ~ i)==cat %}selected{% endif %}>
+                {{ cat }}
+              </option>
+              {% endfor %}
+            </select>
+          </div>
 
-        <label>Model</label>
-        <select name="model_{{ i }}">
-          <option value="">Select Model</option>
-          {% for cat, rows in grouped_models.items() %}
-          <optgroup label="{{ cat }}">
-            {% for r in rows %}
-            <option value="{{ r.Model }}" {% if request.form['model_' + i|string]==r.Model %}selected{% endif %}>
+          <button type="submit" name="action" value="filter_{{ i }}" class="btn-small" formaction="#appliance-{{ i }}">
+            Apply Category
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label>Model</label>
+          <select name="model_{{ i }}">
+            <option value="">Select Model</option>
+            {% set selected_cat = request.form.get('category_' ~ i) or '' %}
+            {% if selected_cat and selected_cat in grouped_models %}
+            {% set model_rows = grouped_models[selected_cat] %}
+            {% else %}
+            {% set model_rows = all_models %}
+            {% endif %}
+
+            {% for r in model_rows %}
+            <option value="{{ r.Model }}" {% if request.form.get('model_' ~ i)==r.Model %}selected{% endif %}>
               {{ r.Notes or r.Model }}
+              {% if not selected_cat %} ({{ r.Category }}){% endif %}
             </option>
             {% endfor %}
-          </optgroup>
-          {% endfor %}
-        </select>
+          </select>
+        </div>
 
-        <label>Daily Usage (hours / uses)</label>
-        <input type="number" step="0.1" name="usage_{{ i }}" min="0"
-          value="{{ request.form['usage_' + i|string] or '' }}" placeholder="e.g. 3.5">
+        <div class="form-group">
+          <label>Daily Usage</label>
+          <input type="number" step="0.1" min="0" name="usage_{{ i }}" value="{{ request.form.get('usage_' ~ i, '') }}"
+            placeholder="e.g. 3.5">
+
+          <p class="form-hint">
+            {% set cat = (request.form.get('category_' ~ i) or '') | lower %}
+            {% set model = (request.form.get('model_' ~ i) or '') | lower %}
+            {% if 'air conditioner' in cat or 'ac' in cat %}
+            Enter hours used per day
+            {% elif 'washing machine' in cat or 'washer' in cat %}
+            Enter number of uses (loads) per day
+            {% elif 'rice cooker' in cat or 'rice' in model %}
+            Enter number of times used per day
+            {% elif 'fan' in cat or 'laptop' in cat or 'desktop' in cat or 'pc' in cat or 'monitor' in cat or
+            'television' in cat or 'tv' in cat or 'light' in cat %}
+            Enter hours used per day
+            {% else %}
+            Enter hours per day or number of uses
+            {% endif %}
+          </p>
+        </div>
       </div>
       {% endfor %}
+    </div>
 
-      <input type="hidden" name="num_appliances" value="{{ num_appliances }}">
+    <!-- ==================== CUSTOM APPLIANCE SECTION ==================== -->
+    <div class="custom-appliance-section">
+      <h3 style="margin: 1.5rem 0 1rem;">Custom Appliances (Not in List)</h3>
+
+      {% set cc = custom_count | default(1) %}
+      {% for i in range(1, cc + 1) %}
+      <div class="appliance-card">
+        <h3>Custom Appliance {{ i }}</h3>
+        <div class="form-group">
+          <label>Appliance Name</label>
+          <input type="text" name="custom_name_{{ i }}" placeholder="e.g. Gaming PC, Water Pump"
+            value="{{ request.form.get('custom_name_' ~ i, '') }}">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Category</label>
+            <input type="text" name="custom_category_{{ i }}" placeholder="e.g. Gaming PC, Other"
+              value="{{ request.form.get('custom_category_' ~ i, 'Custom') }}">
+          </div>
+          <div class="form-group">
+            <label>Power (Watts)</label>
+            <input type="number" name="custom_watts_{{ i }}" placeholder="e.g. 350" step="1"
+              value="{{ request.form.get('custom_watts_' ~ i, '') }}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Daily Usage</label>
+          <input type="number" step="0.1" min="0" name="custom_usage_{{ i }}" placeholder="e.g. 4.5"
+            value="{{ request.form.get('custom_usage_' ~ i, '') }}">
+          <p class="form-hint">Enter hours per day or number of uses</p>
+        </div>
+      </div>
+      {% endfor %}
     </div>
 
     <!-- Action buttons -->
-    <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
-      <button type="submit" name="action" value="calculate" class="btn-primary">
+    <div class="action-buttons">
+      <button type="submit" name="action" value="calculate" class="btn-primary" formaction="#result-section">
         Calculate Daily Usage
       </button>
 
       <button type="submit" name="action" value="add_more" class="btn-add">
         Add 2 more appliances
       </button>
+
+      <button type="submit" name="action" value="add_custom" class="btn-add">
+        + Add Custom Appliance
+      </button>
+
+      <button type="button" onclick="document.getElementById('main-form').reset(); window.location.href='/'"
+        class="btn-reset">
+        Reset Form
+      </button>
     </div>
+
+    <p class="form-hint note">
+      Add at least one appliance before calculating
+    </p>
 
   </form>
 
   {% if result %}
-  <section class="result-section">
+  <section class="result-section" id="result-section">
     <div class="result-card">
       <h2>Estimated Daily Consumption</h2>
-      <p class="big">{{ result.daily_kwh }} kWh / day</p>
-      <p class="small">≈ ₱{{ result.daily_bill }} / day</p>
+      <p class="big">{{ result.daily_kwh }} <span>kWh / day</span></p>
+      <p class="small">≈ ₱{{ result.daily_bill }} per day</p>
     </div>
 
     <div class="detail-grid">
       <div class="detail-box">
-        <strong>Based on appliances:</strong>
+        <strong>Based on listed appliances:</strong><br>
         {{ result.base_kwh }} kWh / day
       </div>
 
       <div class="detail-box">
-        <strong>Estimated daily cost range:</strong>
+        <strong>Estimated daily cost range:</strong><br>
         ₱{{ result.bill_low }} – ₱{{ result.bill_high }}
       </div>
     </div>
